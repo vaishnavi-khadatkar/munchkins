@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@400..800&family=Concert+One&family=Merienda:wght@500..900&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+body {
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #293341;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 500px;
+  height: 500px;
+ 
+}
+
+.input-field {
+  background-color: #334150;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin:10px 10px ;
+  width: 80%;
+}
+
+.input-field::placeholder {
+  color: white;
+}
+
+.button {
+  background-color: #007bff;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+h1{
+    margin-top: 70px;
+}
+.button:hover {
+  opacity: 0.8;
+}
+
+.icon {
+  position: relative;
+  top: 0;
+  right: 10px;
+  color: white;
+}
+</style>
+</head>
+<body>
+  <header>
+        
+    <nav>
+        <div class="logo">
+            <a href="/"><img src="./image/logo-removebg.png" alt="Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Admission">Admission</a></li>
+            <li><a href="/franchise">Franchise</a></li>
+            <li class="dropdown">
+                <a href="/program">Programs <span class="fas fa-caret-down"></span></a>
+                <div class="test">
+                    <ul class="dropdown-content">
+                        <li><a href="/pre-nursery">Pre-Nursery</a></li>
+                        <li><a href="/nursery">Nursery</a></li>
+                        <li><a href="/kindergarten">Kindergarten</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="/Newsandevent">News & Events</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        
+        <div class="toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        
+        <div class="dropdown_menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="Admission">Admission</a></li>
+          <li><a href="/franchise">Franchise</a></li>
+          <li class="dropdown">
+            <a href="/program">Programs <span class="fas fa-caret-down"></span></a>
+            <ul class="dropdown-content1">
+              <li><a href="/pre-nursery">Pre-Nursery</a></li>
+              <li><a href="/nursery">Nursery</a></li>
+              <li><a href="/kindergarten">Kindergarten</a></li>
+            </ul>
+          </li>
+          <li><a href="/Newsandevent">News & Events</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </div>
+    </nav >
+</header>
+<div class="container">
+  <h1>ADMIN LOGIN</h1>
+  <input type="text" class="input-field" placeholder="Username" />
+  <i class="fas fa-user icon"></i>
+  <input type="password" class="input-field" placeholder="Password" />
+  <i class="fas fa-lock icon"></i>
+  <button class="button" onclick="login()">Login</button>
+  <p>Forgot Password?</p>
+</div>
+<div class="footer">
+    
+  <div class="footer-container">
+      <div class="logo">
+        <img src="./image/logo-removebg.png" alt="Bachpan Logo">
+        <p>At Munchkin Kindergarten, we believe in fostering a love for learning through our innovating teaching approach </p>
+      </div>
+      <div class="quick-links">
+          <ul>
+            <li><a href="/kindergarten"><h2>kindergarten</h2></a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/franchise">Franchise</a></li>
+            <li><a href="/program">Programs</a></li>
+            <li><a href="/Newsandevent">News & Events</a></li>
+           
+          </ul>
+        </div>
+      <div class="quick-links">
+          <ul>
+            <li><a href="#"><h2>Get help</h2></a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="/Admission">Admission</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/terms">Terms and Conditions</a></li>
+          </ul>
+        </div>
+      <div class="contact-details">
+        <ul>
+          <h2>Our Contact Details</h2>
+          <li><i class="fas fa-map-marker-alt"></i> 9988/B-1, S.K Tower, Sarai <br>Rohilla, New Rohtak Rd, <br>Delhi-110005</li>
+          <li><i class="fas fa-phone"></i> 011-35106666/7777</li>
+          <li><i class="fas fa-envelope"></i> response@munchkinkindergarten.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-buttons">
+      <button class="button">Corporate Login</button>
+    </div>
+    <hr>
+    <div class="copy-right">
+      <p>Copyright © 2024 Munchkin Kindergarten</p>
+    </div>
+    </div>
+
+<script>
+  function login() {
+    // Add your login logic here
+    alert("Login successfully!");
+  }
+</script>
+
+</body>
+</html>

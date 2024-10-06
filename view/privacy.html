@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@400..800&family=Concert+One&family=Merienda:wght@500..900&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    nav {
+    background:rgb(232, 232, 243);
+    backdrop-filter: blur(15px);
+    box-shadow: 10px 5px 15px black;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+  }
+  
+  .logo img{
+    height: 4rem;
+    width: 20rem;
+    max-width: 70%;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    max-width: 800px;
+    list-style: none;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .nav-links a:hover {
+    border-bottom: 3px solid rgb(3, 3, 3);
+    color: #f87930;
+  
+  }
+  
+  .dropdown {
+    position:relative;
+  }
+  
+  .dropdown .fas.fa-caret-down {
+    margin-left: 5px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .dropdown:hover .fas.fa-caret-down {
+    transform: translateY(-2px);
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0f0f0f54;
+    backdrop-filter: blur(15px);
+    color: #fff;
+    padding: 10px 20px;
+    list-style: none;
+    z-index: 1;
+    border-radius: 10px;
+    margin-top: 6px;
+  }
+  
+  .dropdown-content1 {
+    display: none;
+    position: relative;
+    color: #fff;
+    padding: 10px 20px;
+    list-style: none;
+    z-index: 1;
+    margin-top: 6px;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    
+  }
+  
+  .dropdown:hover .dropdown-content1 {
+    display: block;
+    
+  }
+  
+  
+  .dropdown-content li {
+    margin-bottom: 10px;
+  }
+  
+  .toggle_btn {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .toggle_btn:hover{
+      color: #f87930; 
+  }
+  
+  /*DROPDOWN MENU*/
+  .dropdown_menu {
+      display: none;
+      position: absolute;
+      right: 2rem;
+      top: 75px;
+      width: 300px;
+      height: 0;
+      background: linear-gradient(10deg,rgba(0, 0, 0, 0.938),rgba(0, 2, 3, 0.884),rgba(7, 0, 12, 0.336),rgba(0, 2, 3, 0.733),rgba(5, 5, 5, 0.966));
+      backdrop-filter: blur(15px);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .dropdown_menu a:hover {
+      color: #f87930;
+    }
+  
+  .dropdown_menu.open{
+      height: auto;
+  }
+  
+  .dropdown_menu a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+    }
+  
+  .dropdown_menu li{
+      padding: 0.7rem;
+      display:flex ;
+      align-items: center;
+     flex-direction: column;
+      
+  
+  }
+  
+  .dropdown-content li{
+      padding: 0.7rem;
+      display: inline-block;
+  
+  }
+  .dropdown-content1 li{
+    padding: 0.7rem;
+    flex-direction: column;
+  
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: #333;
+      padding: 20px;
+      
+    }
+  
+    .toggle_btn{
+      display: block;
+    }
+  
+    .dropdown_menu{
+      display: block;
+    }
+  }
+  
+  @media (max-width :576px){
+      .dropdown_menu{
+          left: 2rem;
+          width: unset;
+      }
+  }
+    .privacy-container {
+      
+      margin: 10px;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+   
+    .image {
+      margin-top: 60px;
+      height: 50%;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+     .image img {
+      width: 100%;
+     
+      object-fit: cover;
+    }
+
+    .content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    
+    .footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    .footer-container {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-size: 100%;
+    width: 100%;
+    margin: 0%;
+  }
+  
+  .logo2 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo2 img {
+    width: 300px;
+    height: auto;
+    margin-right: 70px;
+  }
+  
+  .quick-links {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  
+  .quick-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .quick-links a {
+    font-size: 18px;
+    text-decoration: none;
+    color:black;
+    transition: color 0.3s ease-in-out;
+  }
+  /* .quick-links li {
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .quick-links a {
+    text-decoration: none;
+    color:black;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .quick-links a:hover {
+    color: #e90a0a;
+    transform: scale(1.1);
+  }
+  
+  .quick-links li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  @media (max-width: 768px) {
+    .quick-links {
+      font-size: 20px;
+    }
+    .quick-links li {
+      margin: 5px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .quick-links {
+      font-size: 20px;
+    }
+    .quick-links li {
+      margin: 2px;
+    }
+  } */
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 100px;
+  }
+  
+  .contact-details h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-weight: bold;
+
+  }
+  
+  .contact-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-details li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .contact-details li i {
+    margin-right: 40px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 600px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  </style>
+</head>
+<body>
+  <header>
+        
+    <nav>
+        <div class="logo">
+            <a href="/"><img src="./image/logo-removebg.png" alt="Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Admission">Admission</a></li>
+            <li><a href="/franchise">Franchise</a></li>
+            <li class="dropdown">
+                <a href="/program">Programs <span class="fas fa-caret-down"></span></a>
+                <div class="test">
+                    <ul class="dropdown-content">
+                        <li><a href="/pre-nursery">Pre-Nursery</a></li>
+                        <li><a href="/nursery">Nursery</a></li>
+                        <li><a href="/kindergarten">Kindergarten</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="/Newsandevent">News & Events</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        
+        <div class="toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        
+        <div class="dropdown_menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="Admission">Admission</a></li>
+          <li><a href="/franchise">Franchise</a></li>
+          <li class="dropdown">
+            <a href="/program">Programs <span class="fas fa-caret-down"></span></a>
+            <ul class="dropdown-content1">
+              <li><a href="/pre-nursery">Pre-Nursery</a></li>
+              <li><a href="/nursery">Nursery</a></li>
+              <li><a href="/kindergarten">Kindergarten</a></li>
+            </ul>
+          </li>
+          <li><a href="/Newsandevent">News & Events</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </div>
+    </nav >
+</header>   
+  <div class="image">
+    <img src="./image/privacy.png" alt="Bachpan Image"> <!-- replace with your image file -->
+  </div>
+
+  <div class="privacy-container">
+    <div class="content">
+      <h1>PRIVACY POLICY</h1>
+      <p>This privacy notice for Bachpan Play School (S.K. Educations Pvt. Ltd.) (doing business as Bachpan) ('we', 'us', or 'our'), describes how and why we might collect, store, use, and/or share ('process') your information when you use our services ('Services'), such as when you:</p>
+      <ul>
+        <li>Visit our website at <a href="https://www.bachpanglobal.com">https://www.bachpanglobal.com</a>, or any website of ours that links to this privacy notice</li>
+        <li>Engage with us in other related ways, including any sales, marketing, or events</li>
+      </ul>
+      <p>Questions or concerns? Reading this privacy notice will help you understand your privacy rights and choices.</p>
+      <p>If you do not agree with our policies and practices, please do not use our services. If you still have any questions or concerns, please contact us at response@bachpanglobal.com.</p>
+    </div>
+      <div class="content"> <h2> SUMMARY OF KEY POINTS</h2>
+<p>This summary provides key points from our privacy notice.<br><br>
+
+What personal information do we process? When you visit, use, or navigate our services, we may process personal information depending on how you interact with us and the services, the choices you make, and the products and features you use.<br><br>
+
+Do we process any sensitive personal information? We do not process sensitive personal information.<br><br>
+
+Do we collect any information from third parties? We do not collect any information from third parties.<br><br>
+
+How do we process your information? We process your information to provide, improve, and administer our services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent. We process your information only when we have a valid legal reason to do so.<br><br>
+
+How do we keep your information safe? We have organisational and technical processes and procedures in place to protect your personal information. However, no electronic transmission over the internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorised third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information.<br><br>
+
+What are your rights? Depending on where you are located geographically, the applicable privacy law may mean you have certain rights regarding your personal information.<br><br>
+
+How do you exercise your rights? The easiest way to exercise your rights is by submitting a data subject access request, or by contacting us. We will consider and act upon any request in accordance with applicable data protection laws.<br><br>
+
+Want to learn more about what we do with any information we collect? Review the privacy notice in full.</p>
+    </div>
+    <div class="content">
+        <h3>TABLE OF CONTENTS</h3>
+       <p>
+        1.WHAT INFORMATION DO WE COLLECT? • Personal information you disclose to us<br>
+        We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and services, when you participate in activities on the services, or otherwise when you contact us.
+        <br><br>
+        The personal information that we collect depends on the context of your interactions with us and the services, the choices you make, and the products and features you use. The personal information we collect may include the following: names, phone numbers, email addresses, mailing addresses, job titles, and usernames.
+        <br><br>
+        All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.
+        <br><br>
+        • Information automatically collected<br>
+        Some information — such as your Internet Protocol (IP) address and/or browser and device characteristics — is collected automatically when you visit our services.
+        <br><br>
+        We automatically collect certain information when you visit, use, or navigate the services. This information does not reveal your specific identity (like your name or contact information) but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, location, information about how and when you use our services, and other technical information. This information is primarily needed to maintain the security and operation of our services and for our internal analytics and reporting purposes.
+        <br><br>
+        Like many businesses, we also collect information through cookies and similar technologies.
+        <br><br>
+        The information we collect includes:<br>
+        Log and Usage Data: Log and usage data is service-related, diagnostic, usage, and performance information our servers automatically collect when you access or use our services and which we record in log files. Depending on how you interact with us, this log data may include your IP address, device information, browser type, and settings and information about your activity in the services (such as the date/time stamps associated with your usage, pages and files viewed, searches, and other actions you take such as which features you use), device event information (such as system activity, error reports (sometimes called 'crash dumps'), and hardware settings).
+        <br><br>
+        Device Data: We collect device data such as information about your computer, phone, tablet, or other device you use to access the services. Depending on the device used, this device data may include information such as your IP address (or proxy server), device and application identification numbers, location, browser type, hardware model, Internet service provider and/or mobile carrier, operating system, and system configuration information.
+        <br><br>
+        Location Data: We collect location data such as information about your device's location, which can be either precise or imprecise. How much information we collect depends on the type and settings of the device you use to access the services. For example, we may use GPS and other technologies to collect geolocation data that tells us your current location (based on your IP address). You can opt out of allowing us to collect this information either by refusing access to the information or by disabling your Location setting on your device. However, if you choose to opt-out, you may not be able to use certain aspects of our services.
+    
+        2. HOW DO WE PROCESS YOUR INFORMATION?<br>
+        We process your information to provide, improve, and administer our services, to communicate with you, for security and fraud prevention, and to comply with the law. We may also process your information for other purposes with your consent.
+        <br><br>
+        We process your personal information for a variety of reasons, depending on how you interact with our services, including:
+        <br><br>
+        • To deliver targeted advertising to you
+        We may process your information to develop and display personalised content and advertising tailored to your interests, location, and more.
+        <br><br>
+        • To post testimonials
+        We post testimonials on our services that may contain personal information.
+        <br><br>
+        • To administer prize draws and competitions
+        We may process your information to administer prize draws and competitions.
+        <br><br>
+        • To evaluate and improve our services, products, marketing, and your experience
+        We may process your information when we believe it is necessary to identify usage trends, determine the effectiveness of our promotional campaigns, and evaluate and improve our services, products, marketing, and your experience.
+        <br><br>
+        • To determine the effectiveness of our marketing and promotional campaigns
+        We may process your information to better understand how to provide marketing and promotional campaigns that are most relevant to you.
+        <br><br>
+          3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?<br>
+        We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.
+        <br><br>
+          4. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?<br>
+        We may use cookies and other tracking technologies to collect and store your information.
+        <br><br>
+        We may use cookies and similar tracking technologies (like web beacons and pixels) to gather information when you interact with our services. Some online tracking technologies help us maintain the security of our services, prevent crashes, fix bugs, save your preferences, and assist with basic site functions.
+        <br><br>
+        Google Analytics
+        We may share your information with Google Analytics to track and analyse the use of the services. The Google Analytics Advertising Features that we may use include Google Display Network Impressions Reporting and Google Analytics Demographics and Interests Reporting and Remarketing with Google Analytics. To opt out of being tracked by Google Analytics across the services, visit https://tools.google.com/dlpage/gaoptout. You can opt out of Google Analytics Advertising Features through Ads Settings and Ad Settings for mobile apps. Other opt-out means include http://optout.networkadvertising.org/ and http://www.networkadvertising.org/mobile-choice. For more information on the privacy practices of Google, please visit the Google Privacy & Terms page.
+        <br><br>
+          5. HOW LONG DO WE KEEP YOUR INFORMATION?
+        We keep your information for as long as necessary to fulfil the purposes outlined in this privacy notice unless otherwise required by law.
+        We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy notice unless a longer retention period is required or permitted by law (such as tax, accounting, or other legal requirements).
+        <br><br>
+        When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymise such information, or, if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible.
+        <br><br>
+          6. HOW DO WE KEEP YOUR INFORMATION SAFE?<br>
+        We aim to protect your personal information through a system of organisational and technical security measures.
+        <br><br>
+        We have implemented appropriate and reasonable technical and organisational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorised third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Although we will do our best to protect your personal information, transmission of personal information to and from our services is at your own risk. You should only access the services within a secure environment.
+        <br><br>
+          7. WHAT ARE YOUR PRIVACY RIGHTS?<br>
+        If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us.
+        <br><br>
+        However, please note that this will not affect the lawfulness of the processing before its withdrawal, nor when applicable law allows, will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent.
+        <br><br>
+        • Opting out of marketing and promotional communications
+        You can unsubscribe from our marketing and promotional communications at any time by clicking on the unsubscribe link in the emails that we send, replying 'STOP' or 'UNSUBSCRIBE' to the SMS messages that we send, or by contacting us. You will then be removed from the marketing lists. However, we may still communicate with you — for example, to send you service-related messages that are necessary for the administration, to respond to service requests, or for other non-marketing purposes.
+        <br><br>
+        • Cookies and similar technologies
+        Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services.
+        <br><br>
+        If you have questions or comments about your privacy rights, you may email us at response@bachpanglobal.com.
+        <br><br>
+        8. CONTROLS FOR DO-NOT-TRACK FEATURES<br>
+        Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ('DNT') feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognising and implementing DNT signals has been finalised. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy notice.
+        <br><br>
+         9. DO WE MAKE UPDATES TO THIS NOTICE?<br>
+        Yes, we will update this notice as necessary to stay compliant with relevant laws.
+        <br><br>
+        We may update this privacy notice from time to time. The updated version will be indicated by an updated 'Revised' date at the top of this privacy notice. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.</li>
+        
+        10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?<br>
+        
+    </p>
+        </div>
+        <div class="footer">
+    
+          <div class="footer-container">
+              <div class="logo">
+                <img src="./image/logo-removebg.png" alt="Bachpan Logo">
+                <p>At Munchkin Kindergarten, we believe in fostering a love for learning through our innovating teaching approach </p>
+              </div>
+              <div class="quick-links">
+                  <ul>
+                    <li><a href="/kindergarten"><h2>kindergarten</h2></a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/franchise">Franchise</a></li>
+                    <li><a href="/program">Programs</a></li>
+                    <li><a href="/Newsandevent">News & Events</a></li>
+                   
+                  </ul>
+                </div>
+              <div class="quick-links">
+                  <ul>
+                    <li><a href="#"><h2>Get help</h2></a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="/Admission">Admission</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                    <li><a href="/terms">Terms and Conditions</a></li>
+                  </ul>
+                </div>
+              <div class="contact-details">
+                <ul>
+                  <h2>Our Contact Details</h2>
+                  <li><i class="fas fa-map-marker-alt"></i> 9988/B-1, S.K Tower, Sarai <br>Rohilla, New Rohtak Rd, <br>Delhi-110005</li>
+                  <li><i class="fas fa-phone"></i> 011-35106666/7777</li>
+                  <li><i class="fas fa-envelope"></i> response@munchkinkindergarten.com</li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-buttons">
+              <button class="button">Corporate Login</button>
+            </div>
+            <hr>
+            <div class="copy-right">
+              <p>Copyright © 2024 Munchkin Kindergarten</p>
+            </div>
+            </div>
+         
+  </div>
+ 
+</body>
+</html>

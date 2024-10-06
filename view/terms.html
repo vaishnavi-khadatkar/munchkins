@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Baloo+2:wght@400..800&family=Concert+One&family=Merienda:wght@500..900&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+nav {
+    background:rgb(232, 232, 243);
+    backdrop-filter: blur(15px);
+    box-shadow: 10px 5px 15px black;
+    border-radius: 5px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+  }
+  
+  .logo img{
+    height: 4rem;
+    width: 20rem;
+    max-width: 70%;
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    max-width: 800px;
+    list-style: none;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .nav-links a:hover {
+    border-bottom: 3px solid rgb(3, 3, 3);
+    color: #f87930;
+  
+  }
+  
+  .dropdown {
+    position:relative;
+  }
+  
+  .dropdown .fas.fa-caret-down {
+    margin-left: 5px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .dropdown:hover .fas.fa-caret-down {
+    transform: translateY(-2px);
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0f0f0f54;
+    backdrop-filter: blur(15px);
+    color: #fff;
+    padding: 10px 20px;
+    list-style: none;
+    z-index: 1;
+    border-radius: 10px;
+    margin-top: 6px;
+  }
+  
+  .dropdown-content1 {
+    display: none;
+    position: relative;
+    color: #fff;
+    padding: 10px 20px;
+    list-style: none;
+    z-index: 1;
+    margin-top: 6px;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    
+  }
+  
+  .dropdown:hover .dropdown-content1 {
+    display: block;
+    
+  }
+  
+  
+  .dropdown-content li {
+    margin-bottom: 10px;
+  }
+  
+  .toggle_btn {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .toggle_btn:hover{
+      color: #f87930; 
+  }
+  
+  /*DROPDOWN MENU*/
+  .dropdown_menu {
+      display: none;
+      position: absolute;
+      right: 2rem;
+      top: 75px;
+      width: 300px;
+      height: 0;
+      background: linear-gradient(10deg,rgba(0, 0, 0, 0.938),rgba(0, 2, 3, 0.884),rgba(7, 0, 12, 0.336),rgba(0, 2, 3, 0.733),rgba(5, 5, 5, 0.966));
+      backdrop-filter: blur(15px);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .dropdown_menu a:hover {
+      color: #f87930;
+    }
+  
+  .dropdown_menu.open{
+      height: auto;
+  }
+  
+  .dropdown_menu a {
+      text-decoration: none;
+      color: inherit;
+      font-weight: bold;
+    }
+  
+  .dropdown_menu li{
+      padding: 0.7rem;
+      display:flex ;
+      align-items: center;
+     flex-direction: column;
+      
+  
+  }
+  
+  .dropdown-content li{
+      padding: 0.7rem;
+      display: inline-block;
+  
+  }
+  .dropdown-content1 li{
+    padding: 0.7rem;
+    flex-direction: column;
+  
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: #333;
+      padding: 20px;
+      
+    }
+  
+    .toggle_btn{
+      display: block;
+    }
+  
+    .dropdown_menu{
+      display: block;
+    }
+  }
+  
+  @media (max-width :576px){
+      .dropdown_menu{
+          left: 2rem;
+          width: unset;
+      }
+  }
+    .privacy-container {
+      
+      margin: 10px;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+   
+    .image {
+      height: 50%;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+     .image img {
+      width: 100%;
+     
+      object-fit: cover;
+    }
+
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+.content {
+  padding: 20px;
+}
+.footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    .footer-container {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-size: 100%;
+    width: 100%;
+    margin: 0%;
+  }
+  
+  .logo2 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo2 img {
+    width: 300px;
+    height: auto;
+    margin-right: 70px;
+  }
+  
+  .quick-links {
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  
+  .quick-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .quick-links a {
+    font-size: 18px;
+    text-decoration: none;
+    color:black;
+    transition: color 0.3s ease-in-out;
+  }
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 100px;
+  }
+  
+  .contact-details h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-weight: bold;
+
+  }
+  
+  .contact-details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-details li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .contact-details li i {
+    margin-right: 40px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 600px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+</style>
+</head>
+<body>
+  <header>
+        
+    <nav>
+        <div class="logo">
+            <a href="/"><img src="./image/logo-removebg.png" alt="Logo"></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/Admission">Admission</a></li>
+            <li><a href="/franchise">Franchise</a></li>
+            <li class="dropdown">
+                <a href="/program">Programs <span class="fas fa-caret-down"></span></a>
+                <div class="test">
+                    <ul class="dropdown-content">
+                        <li><a href="/pre-nursery">Pre-Nursery</a></li>
+                        <li><a href="/nursery">Nursery</a></li>
+                        <li><a href="/kindergarten">Kindergarten</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="/Newsandevent">News & Events</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+        </ul>
+        
+        <div class="toggle-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        
+        <div class="dropdown_menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="Admission">Admission</a></li>
+          <li><a href="/franchise">Franchise</a></li>
+          <li class="dropdown">
+            <a href="/program">Programs <span class="fas fa-caret-down"></span></a>
+            <ul class="dropdown-content1">
+              <li><a href="/pre-nursery">Pre-Nursery</a></li>
+              <li><a href="/nursery">Nursery</a></li>
+              <li><a href="/kindergarten">Kindergarten</a></li>
+            </ul>
+          </li>
+          <li><a href="/Newsandevent">News & Events</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </div>
+    </nav >
+</header>
+  <div class="image">
+    <img src="./image/Website-Terms-and-Conditions-Guide-1.jpeg" alt="Bachpan Image"> <!-- replace with your image file -->
+  </div>
+<div class="header">
+  <h1>Terms & Conditions</h1>
+</div>
+
+<div class="content">
+  <p>These terms and conditions outline the rules and regulations for the use of Bachpan Play School's Website, located at https://bachpanglobal.com. By accessing this website, you accept these terms and conditions, it is assumed. Do not continue to use Bachpan Play School if you do not agree to take all of the terms and conditions stated on this page.</p>
+  <h3>Licence</h3>
+  <p>Unless otherwise stated, Bachpan Play School owns the intellectual property rights for all material on Bachpan Play School. All intellectual property rights are reserved. You may access this from Bachpan Play School for your own personal use, subject to restrictions set in these terms and conditions.</p>
+  <ul>
+    <li>Republish material from Bachpan Play School</li>
+    <li>Sell, rent or sub-license material from Bachpan Play School</li>
+    <li>Reproduce, duplicate or copy material from Bachpan Play School</li>
+    <li>Redistribute content from Bachpan Play School</li>
+  </ul>
+  <p>Parts of this website offer an opportunity for users to post and exchange opinions and information in certain areas of the website. Bachpan Play School does not filter, edit, publish or review Comments prior to their presence on the website. Comments do not reflect the views and opinions of Bachpan Play School and its agents. Comments reflect the views and opinions of the person who posts their views and opinions. To the extent permitted by applicable laws, Bachpan Play School shall not be liable for the Comments or for any liability, damages or expenses caused and/or suffered as a result of any use of and/or posting of and/or appearance of the Comments on this website</p>
+  <p>Bachpan Play School reserves the right to monitor all Comments and to remove any Comments which can be considered inappropriate, offensive or a breach of these Terms and Conditions.</p>
+  <h2>Hyperlinking to our Content</h2>
+  <p>The following organisations may link to our Website without prior written approval:</p>
+  <ul>
+    <li>Government agencies;</li>
+    <li>Search engines;</li>
+    <li>News organisations;</li>
+    <li>Online directory distributors may link to our Website in the same manner as they hyperlink to the Websites of other listed businesses; and</li>
+    <li>System-wide Accredited Businesses except soliciting non-profit organisations, charity shopping malls, and charity fundraising groups which may not hyperlink to our Website.</li>
+  </ul>
+  <p>These organisations may link to our home page, to publications, or to other Website information so long as the link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of the linking party and its products and/or services; and (c) fits within the context of the linking party's site.</p>
+  <p>We may consider and approve other link requests from the following types of organisations:</p>
+  <ul>
+    <li>commonly-known consumer and/or business information sources;</li>
+    <li>dot.com community sites;</li>
+    <li>associations or other groups representing charities;</li>
+    <li>online directory distributors;</li>
+    <li>internet portals;</li>
+    <li>accounting, law, and consulting firms; and</li>
+    <li>educational institutions and trade associations.</li>
+  </ul>
+  <p>We will approve link requests from these organisations if we decide that: (a) the link would not make us look unfavourably to ourselves or to our accredited businesses; (b) the organisation does not have any negative records with us; (c) the benefit to us from the visibility of the hyperlink compensates the absence of Bachpan Play School ; and (d) the link is in the context of general resource information.</p>
+  <p>Approved organisations may hyperlink to our Website as follows:</p>
+  <ul>
+    <li>By use of our corporate name; or</li>
+    <li>By use of the uniform resource locator being linked to; or</li>
+    <li>By use of any other description of our Website being linked to that makes sense within the context and format of content on the linking party's site.</li>
+  </ul>
+  <p>No use of Bachpan Play School's logo or other artwork will be allowed for linking absent a trademark licence agreement.</p>
+  <p>We collect personal information that you voluntarily provide to us when you express an interest in obtaining information about us or our products and services, when you participate in activities on the services, or otherwise when you contact us.</p>
+  <p>The personal information that we collect depends on the context of your interactions with us and the services, the choices you make, and the products and features you use. The personal information we collect may include the following: names, phone numbers, email addresses, mailing addresses, job titles, and usernames.</p>
+  <p>All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</p>
+  <h3>Information automatically collected</h3>
+  <p>Some information — such as your Internet Protocol (IP) address and/or browser and device characteristics — is collected automatically when you visit our services.</p>
+  <p>We automatically collect certain information when you visit, use, or navigate the services. This information does not reveal your specific identity (like your name or contact information) but may include device and usage information, such as your IP address, browser and device characteristics, operating system, language preferences, referring URLs, device name, country, location, information about how and when you use our services, and other technical information. This information is primarily needed to maintain the security and operation of our services and for our internal analytics and reporting purposes.</p>
+  <p>Like many businesses, we also collect information through cookies and similar technologies.</p>
+  <p>The information we collect includes:</p>
+  <ul>
+    <li>Log and Usage Data: Log and usage data is service-related, diagnostic, usage, and performance information our servers automatically collect when you access or use our services and which we record in log files. Depending on how you interact with us, this log data may include your IP address, device information, browser type, and settings and information about your activity in the services (such as the date/time stamps associated with your usage, pages and files viewed, searches, and other actions you take such as which features you use), device event information (such as system activity, error reports (sometimes called 'crash dumps'), and hardware settings).</li>
+    <li>Device Data: We collect device data such as information about your computer, phone, tablet, or other device you use to access the services. Depending on the device used, this device data may include information such as your IP address (or proxy server), device and application identification numbers, location, browser type, hardware model, Internet service provider and/or mobile carrier, operating system, and system configuration information.</li>
+    <li>Location Data: We collect location data such as information about your device's location, which can be either precise or imprecise. How much information we collect depends on the type and settings of the device you use to access the services. For example, we may use GPS and other technologies to collect geolocation data that tells us your current location (based on your IP address). You can opt out of allowing us to collect this information either by refusing access to the information or by disabling your Location setting on your device. However, if you choose to opt-out, you may not be able to use certain aspects of our services.</li>
+  </ul>
+  <h2>2. HOW DO WE PROCESS YOUR INFORMATION?</h2>
+  <p>We process your information to provide, improve, and administer our services, to communicate with you, for security and fraud prevention, and to comply with the law. We may also process your information for other purposes with your consent.</p>
+  <p>We process your personal information for a variety of reasons, depending on how you interact with our services, including:</p>
+  <ul>
+    <li>To deliver targeted advertising to you</li>
+    <li>We may process your information to develop and display personalised content and advertising tailored to your interests, location, and more.</li>
+    <li>To post testimonials</li>
+    <li>We post testimonials on our services that may contain personal information.</li>
+    <li>To administer prize draws and competitions</li>
+    <li>We may process your information to administer prize draws and competitions.</li>
+    <li>To evaluate and improve our services, products, marketing, and your experience</li>
+    <li>We may process your information when we believe it is necessary to identify usage trends, determine the effectiveness of our promotional campaigns, and evaluate and improve our services, products, marketing, and your experience.</li>
+    <li>To determine the effectiveness of our marketing and promotional campaigns</li>
+    <li>We may process your information to better understand how to provide marketing and promotional campaigns that are most relevant to you.</li>
+  </ul>
+  <h2>3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</h2>
+  <p>We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.</p>
+  <h2>4. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?</h2>
+  <p>We may use cookies and other tracking technologies to collect and store your information.</p>
+  <p>We may use cookies and similar tracking technologies (like web beacons and pixels) to gather information when you interact with our services. Some online tracking technologies help us maintain the security of our services, prevent crashes, fix bugs, save your preferences, and assist with basic site functions.</p>
+  <h3>Google Analytics</h3>
+  <p>We may share your information with Google Analytics to track and analyse the use of the services. The Google Analytics Advertising Features that we may use include Google Display Network Impressions Reporting and Google Analytics Demographics and Interests Reporting and Remarketing with Google Analytics. To opt out of being tracked by Google Analytics across the services, visit <a href="https://tools.google.com/dlpage/gaoptout">https://tools.google.com/dlpage/gaoptout</a>. You can opt out of Google Analytics Advertising Features through Ads Settings and Ad Settings for mobile apps. Other opt-out means include <a href="http://optout.networkadvertising.org/">http://optout.networkadvertising.org/</a> and <a href="http://www.networkadvertising.org/mobile-choice">http://www.networkadvertising.org/mobile-choice</a>. For more information on the privacy practices of Google, please visit the Google Privacy & Terms page.</p>
+  <h2>5. HOW LONG DO WE KEEP YOUR INFORMATION?</h2>
+  <p>We keep your information for as long as necessary to fulfil the purposes outlined in this privacy notice unless otherwise required by law.</p>
+  <p>We will only keep your personal information for as long as it is necessary for the purposes set out in this privacy notice unless a longer retention period is required or permitted by law (such as tax, accounting, or other legal requirements).</p>
+  <p>When we have no ongoing legitimate business need to process your personal information, we will either delete or anonymise such information, or, if this is not possible (for example, because your personal information has been stored in backup archives), then we will securely store your personal information and isolate it from any further processing until deletion is possible.</p>
+  <h2>6. HOW DO WE KEEP YOUR INFORMATION SAFE?</h2>
+  <p>We aim to protect your personal information through a system of organisational and technical security measures.</p>
+  <p>We have implemented appropriate and reasonable technical and organisational security measures designed to protect the security of any personal information we process. However, despite our safeguards and efforts to secure your information, no electronic transmission over the Internet or information storage technology can be guaranteed to be 100% secure, so we cannot promise or guarantee that hackers, cybercriminals, or other unauthorised third parties will not be able to defeat our security and improperly collect, access, steal, or modify your information. Although we will do our best to protect your personal information, transmission of personal information to and from our services is at your own risk. You should only access the services within a secure environment.</p>
+  <h2>7. WHAT ARE YOUR PRIVACY RIGHTS?</h2>
+  <p>If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us.</p>
+  <p>However, please note that this will not affect the lawfulness of the processing before its withdrawal, nor when applicable law allows, will it affect the processing of your personal information conducted in reliance on lawful processing grounds other than consent.</p>
+  <h3>Opting out of marketing and promotional communications</h3>
+  <p>You can unsubscribe from our marketing and promotional communications at any time by clicking on the unsubscribe link in the emails that we send, replying 'STOP' or 'UNSUBSCRIBE' to the SMS messages that we send, or by contacting us. You will then be removed from the marketing lists. However, we may still communicate with you — for example, to send you service-related messages that are necessary for the administration, to respond to service requests, or for other non-marketing purposes.</p>
+  <h3>Cookies and similar technologies</h3>
+  <p>Most Web browsers are set to accept cookies by default. If you prefer, you can usually choose to set your browser to remove cookies and to reject cookies. If you choose to remove cookies or reject cookies, this could affect certain features or services.</p>
+  <p>If you have questions or comments about your privacy rights, you may email us at response@bachpanglobal.com.</p>
+  <h2>8. CONTROLS FOR DO-NOT-TRACK FEATURES</h2>
+  <p>Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ('DNT') feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognising and implementing DNT signals has been finalised. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this privacy notice.</p>
+  <h2>9. DO WE MAKE UPDATES TO THIS NOTICE?</h2>
+  <p>Yes, we will update this notice as necessary to stay compliant with relevant laws.</p>
+  <p>We may update this privacy notice from time to time. The updated version will be indicated by an updated 'Revised' date at the top of this privacy notice. If we make material changes to this privacy notice, we may notify you either by prominently posting a notice of such changes or by directly sending you a notification. We encourage you to review this privacy notice frequently to be informed of how we are protecting your information.</p>
+  <h2>10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</h2>
+  <p>If you have questions or comments about this notice, you may either email us at response@bachpanglobal.com or contact us by post at:</p>
+  <p>Bachpan Play School (S.K. Educations Pvt. Ltd.)<br>
+  9988/B-1, S.K Tower,<br>
+  Sarai Rohilla, New Rohtak Rd,<br>
+  New Delhi 110005<br>
+  India</p>
+  <h2>11. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?</h2>
+  <p>Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. To request to review, update, or delete your personal information, please fill out and submit a data subject access request.</p>
+</div>
+<div class="footer">
+    
+  <div class="footer-container">
+      <div class="logo">
+        <img src="./image/logo-removebg.png" alt="Bachpan Logo">
+        <p>At Munchkin Kindergarten, we believe in fostering a love for learning through our innovating teaching approach </p>
+      </div>
+      <div class="quick-links">
+          <ul>
+            <li><a href="/kindergarten"><h2>kindergarten</h2></a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/franchise">Franchise</a></li>
+            <li><a href="/program">Programs</a></li>
+            <li><a href="/Newsandevent">News & Events</a></li>
+           
+          </ul>
+        </div>
+      <div class="quick-links">
+          <ul>
+            <li><a href="#"><h2>Get help</h2></a></li>
+            <li><a href="#">Register</a></li>
+            <li><a href="/Admission">Admission</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/terms">Terms and Conditions</a></li>
+          </ul>
+        </div>
+      <div class="contact-details">
+        <ul>
+          <h2>Our Contact Details</h2>
+          <li><i class="fas fa-map-marker-alt"></i> 9988/B-1, S.K Tower, Sarai <br>Rohilla, New Rohtak Rd, <br>Delhi-110005</li>
+          <li><i class="fas fa-phone"></i> 011-35106666/7777</li>
+          <li><i class="fas fa-envelope"></i> response@munchkinkindergarten.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-buttons">
+      <button class="button">Corporate Login</button>
+    </div>
+    <hr>
+    <div class="copy-right">
+      <p>Copyright © 2024 Munchkin Kindergarten</p>
+    </div>
+    </div>
+</body>
+</html>

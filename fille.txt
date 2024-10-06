@@ -1,0 +1,140 @@
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const path = require('path');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+// Middleware
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI_MUNCHKINURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('MongoDB connected'))
+.catch(err => console.error('MongoDB connection error:', err));
+
+// Define schemas and models
+
+const franchiseSchema = new mongoose.Schema({
+  username: String,
+  email: String,
+  mobile: String,
+  address: String,
+  select: String,
+  query: String,
+});
+const FranchiseData = mongoose.model('FranchiseData', franchiseSchema);
+
+const admissionSchema = new mongoose.Schema({
+  username: String,
+  email: String,
+  phone: String,
+  address: String,
+  select: String,
+  query: String,
+});
+const AdmissionData = mongoose.model('AdmissionData', admissionSchema);
+
+const contactSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  telephone: String,
+  message: String,
+});
+const ContactData = mongoose.model('ContactData', contactSchema);
+
+// Routes
+
+// Handle POST request to save franchise data
+app.post('/submit', (req, res) => {
+  console.log('Received franchise data:', req.body);
+  const { username, email, mobile, address, select, query } = req.body;
+  console.log('Franchise data to be saved:', { username, email, mobile, address, select, query });
+
+  const newFranchiseData = new FranchiseData({
+    username,
+    email,
+    mobile,
+    address,
+    select,
+    query,
+  });
+
+  newFranchiseData.save()
+    .then(() => {
+      console.log('Franchise data saved to MongoDB');
+      res.redirect('/');
+    })
+    .catch(err => {
+      console.error('Error saving franchise data to MongoDB:', err);
+      res.status(500).send('Error occurred while saving to MongoDB');
+    });
+});
+
+// Handle POST request to save admission data
+app.post('/save', (req, res) => {
+  console.log('Received admission data:', req.body);
+  const { username, email, phone, address, select, query } = req.body;
+  console.log('Admission data to be saved:', { username, email, phone, address, select, query });
+
+  const newAdmissionData = new AdmissionData({
+    username,
+    email,
+    phone,
+    address,
+    select,
+    query,
+  });
+
+  newAdmissionData.save()
+    .then(() => {
+      console.log('Admission data saved to MongoDB');
+      res.redirect('/');
+    })
+    .catch(err => {
+      console.error('Error saving admission data to MongoDB:', err);
+      res.status(500).send('Error occurred while saving to MongoDB');
+    });
+});
+
+// Handle POST request to save contact data
+app.post('/contactus', (req, res) => {
+  console.log('Received contact data:', req.body);
+  const { name, email, telephone, message } = req.body;
+  console.log('Contact data to be saved:', { name, email, telephone, message });
+
+  const newContactData = new ContactData({
+    name,
+    email,
+    telephone,
+    message,
+  });
+
+  newContactData.save()
+    .then(() => {
+      console.log('Contact data saved to MongoDB');
+      res.redirect('/');
+    })
+    .catch(err => {
+      console.error('Error saving contact data to MongoDB:', err);
+      res.status(500).send('Error occurred while saving to MongoDB');
+    });
+});
+
+app.get('/view-franchise', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'franchise.html'));
+  });
+  // Route to view admission data
+  app.get('/view-admission', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'Admission.html'));
+  });
+  app.get('/view-contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'view', 'contact.html'));
+  });
